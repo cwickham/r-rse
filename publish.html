@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 13 Publishing | Merely Useful: Using R for Research Software Engineering</title>
   <meta name="description" content="Chapter 13 Publishing | Merely Useful: Using R for Research Software Engineering" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 13 Publishing | Merely Useful: Using R for Research Software Engineering" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Madeleine Bonsma-Fisher, Kate Hertweck, Damien Irving, Luke Johnston, Christina Koch, Sara Mahallati, Joel Ostblom, Elizabeth Wickes, Charlotte Wickham, and Greg Wilson" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="correct.html"/>
 <link rel="next" href="finale.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -649,7 +650,7 @@ so that people who aren’t in academia can find and access it.</p>
 <p>Before publishing anything,
 we need to understand the systems used to identify works
 and their authors.</p>
-<p>A [Digital Object Identifier][doi] (DOI)
+<p>A <a href="glossary.html#doi">Digital Object Identifier</a> (DOI)
 is a unique identifier for a particular version of a particular digital artifact
 such as a report, a dataset, or a piece of software.
 DOIs are written as <code>doi:prefix/suffix</code>,
@@ -657,7 +658,7 @@ but are often also represented as URLs like <code>http://dx.doi.org/prefix/suffi
 In order to be allowed to issue a DOI (i.e., to become a prefix),
 academic journals, data archives, and others
 must guarantee a certain level of security, longevity and access.</p>
-<p>An <a href="publish.html#publish-ex-get-orcid">ORCID</a> is an Open Researcher and Contributor ID.
+<p>An <a href="https://orcid.org/">ORCID</a> is an Open Researcher and Contributor ID.
 You can get an ORCID for free,
 and you should include it in publications
 because people’s names and affiliations change over time.</p>
@@ -669,17 +670,17 @@ Numerous open access journals support academic, peer-reviewed research papers,
 and many formerly closed-access journals also now offer an open access option,
 though sometimes for an additional fee.</p>
 <p>Another option is to publish with an online pre-print server
-such as [arXiv][arxiv] (which started it all) or [bioRxiv][biorxiv].
+such as <a href="https://arxiv.org/">arXiv</a> (which started it all) or <a href="https://www.biorxiv.org/">bioRxiv</a>.
 A preprint is a version of an academic research paper that precedes formal peer review
 and publication in a peer-reviewed journal.
 The preprint may be available, often as a non-typeset version available free,
 before and/or after a paper is published in a journal.</p>
-<p>Online writing platforms such as [Authorea][authorea] and [Overleaf][overleaf] are also an option.
+<p>Online writing platforms such as <a href="https://authorea.com/">Authorea</a> and <a href="https://authorea.com/">Overleaf</a> are also an option.
 These allow a report to be openly viewable on the web throughout the entire writing process.
 Once work is complete (or as complete as research writing ever is),
 they can issue a DOI or the text can be exported for submission to an academic journal.
 For everything other than reports,
-online platforms such as [Figshare][figshare] and [Zenodo][zenodo]
+online platforms such as <a href="https://figshare.com/">Figshare</a> and <a href="https://zenodo.org/">Zenodo</a>
 can issue DOIs as well.
 It is common for people to upload datasets and other items to these platforms
 so that they can be easily accessed by others.</p>
@@ -713,7 +714,7 @@ because a simple metric of global warming could be useful in many subsequent stu
 such as observations collected during a field experiment,
 then the simple version of how to publish it is:</p>
 <ul>
-<li>Always use [tidy data][tidy-data].</li>
+<li>Always use <a href="glossary.html#tidy-data">tidy data</a>.</li>
 <li>Include keywords describing the data in the project’s <code>README.md</code>
 so that they appear on its home page and can easily be found by search engines.</li>
 <li>Give every dataset and every report a unique identifier (Section <a href="publish.html#publish-identifiers">13.1</a>).</li>
@@ -724,7 +725,7 @@ so that they appear on its home page and can easily be found by search engines.<
 </ul>
 <p>The last point is often the hardest for people to implement,
 since many researchers have never seen a well-documented dataset.
-We draw inspiration from the data catalog included in [the repository][womens-pockets-data] for <span class="citation">Diehm and Thomas</span>
+We draw inspiration from the data catalog included in <a href="https://github.com/the-pudding/data/blob/master/pockets/README.md">the repository</a> for <span class="citation">Diehm and Thomas</span>
 and include a file <code>./data/README.md</code> in every project
 that looks like this:</p>
 <pre><code>-   Infants born to women with HIV receiving an HIV test within two months of birth, 2009-2017
@@ -790,7 +791,7 @@ Note also that calling a field “NA” is asking for trouble…</p>
 </div>
 <div id="publish-fair" class="section level2" number="13.4">
 <h2><span class="header-section-number">13.4</span> What standards of data sharing should I aspire to?</h2>
-<p>The [FAIR Principles][go-fair] describe what research data should look like.
+<p>The <a href="https://www.go-fair.org/fair-principles/">FAIR Principles</a> describe what research data should look like.
 They are still aspirational for most researchers <span class="citation">(Brock)</span>,
 but they tell us what to aim for.
 The most immediately important elements of the FAIR Principles are outlined below.</p>
@@ -836,7 +837,7 @@ You can tell you’ve done this if:</p>
 <ol style="list-style-type: decimal">
 <li>Meta(data) is described with accurate and relevant attributes.</li>
 <li>(Meta)data is released with a clear and accessible data usage license.</li>
-<li>(Meta)data has detailed [provenance][provenance].</li>
+<li>(Meta)data has detailed <a href="glossary.html#provenance">provenance</a>.</li>
 <li>(Meta)data meets domain-relevant community standards.</li>
 </ol>
 </div>
@@ -846,13 +847,13 @@ You can tell you’ve done this if:</p>
 using the conventions described in Chapter <a href="project.html#project">9</a>.
 If the data is being used in several projects,
 it may make sense to create one repository to hold only the data;
-the R community refers to these as [data packages][data-package],
+the R community refers to these as <a href="glossary.html#data-package">data packages</a>,
 and they are often accompanied by small scripts to clean up and query the data.
 Be sure to give the dataset an identifier as discussed in Section <a href="publish.html#publish-identifiers">13.1</a>.</p>
 <p>For medium-sized datasets (between 500 MB and 5 GB),
-it’s better to put the data on platforms like the [Open Science Framework][osf],
-[Dryad][dryad],
-and [Figshare][figshare].
+it’s better to put the data on platforms like the <a href="https://osf.io/">Open Science Framework</a>,
+<a href="https://datadryad.org/">Dryad</a>,
+and <a href="https://figshare.com/">Figshare</a>.
 Each of these will give the datasets identifiers;
 those identifiers should be included in reports
 along with scripts to download the data.
@@ -870,9 +871,9 @@ is usually the end of the data publishing process,
 there is the option of publishing a journal paper to describe the dataset in detail.
 Some research disciplines have journals devoted
 to describing particular types of data
-(e.g., the [Geoscience Data Journal][geoscience-data-journal])
+(e.g., the <a href="https://rmets.onlinelibrary.wiley.com/journal/20496060">Geoscience Data Journal</a>)
 and there are also generic data journals
-(e.g., [Scientific Data][scientific-data]).</p>
+(e.g., <a href="https://www.nature.com/sdata/">Scientific Data</a>).</p>
 </blockquote>
 </div>
 </div>
@@ -883,7 +884,7 @@ shows how to document and package software.
 The final step in this process is publication.
 It is common practice to have the code associated with a software package
 openly available on a hosting service
-such as [GitHub][github], [GitLab][gitlab], or [Bitbucket][bitbucket].
+such as <a href="http://github.com">GitHub</a>, <a href="https://gitlab.com/">GitLab</a>, or <a href="https://bitbucket.org/">Bitbucket</a>.
 These hosting services are not only a convenient place for people to ask questions
 and make contributions/improvements to the software,
 they also have built-in functionality for managing the
@@ -893,7 +894,7 @@ is that they don’t guarantee persistent long term storage
 (e.g., if you changed the name of your GitHub repository any URLs for
 the existing repository would be broken).
 Acknowledging this limitation,
-GitHub provides [Zenodo integration][github-zenodo-tutorial]
+GitHub provides <a href="https://guides.github.com/activities/citable-code/">Zenodo integration</a>
 for creating a DOI with each new software release.</p>
 <p>TODO: Add explanation about CRAN.</p>
 <blockquote>
@@ -904,10 +905,10 @@ there is the option of publishing
 a journal paper to describe the software in detail.
 Some research disciplines have journals devoted
 to describing particular types of software
-(e.g., [Geoscientific Model Development][geoscientific-model-development]),
+(e.g., <a href="https://www.geoscientific-model-development.net/">Geoscientific Model Development</a>),
 and there are also a number of generic software journals such as the
-[Journal of Open Research Software][jors] and
-the [Journal of Open Source Software][theoj].</p>
+<a href="https://openresearchsoftware.metajnl.com/">Journal of Open Research Software</a> and
+the <a href="https://joss.theoj.org/">Journal of Open Source Software</a>.</p>
 </blockquote>
 </div>
 <div id="publish-scripts" class="section level2" number="13.6">
@@ -949,7 +950,7 @@ In some cases it might be easy enough for a reader to install the handful of R p
 but in other cases you might want to save the reader (and your future self)
 the pain of software installation by making use of a tool
 that can automatically install a specified software environment.</p>
-<p>Complex tools like [Docker][docker]
+<p>Complex tools like <a href="https://en.wikipedia.org/wiki/Docker_(software)">Docker</a>
 can literally install your entire environment (down to the precise operating system) on a different computer.
 There’s lots of debate
 about the potential and suitability of these tools as a solution to reproducible research,
@@ -998,14 +999,14 @@ You might also provide a Makefile that automatically builds and executes common 
 <h2><span class="header-section-number">13.8</span> Exercises</h2>
 <div id="publish-ex-get-orcid" class="section level3" number="13.8.1">
 <h3><span class="header-section-number">13.8.1</span> ORCID</h3>
-<p>If you don’t already have an <a href="publish.html#publish-ex-get-orcid">ORCID</a>,
+<p>If you don’t already have an <a href="https://orcid.org/">ORCID</a>,
 go to the website and register now.
 If you do have an ORCID,
 log in and make sure that your details and publication record are up-to-date.</p>
 </div>
 <div id="publish-ex-fair-test" class="section level3" number="13.8.2">
 <h3><span class="header-section-number">13.8.2</span> A FAIR test</h3>
-<p>An [online questionnaire][fair-questionnaire]
+<p>An <a href="https://www.ands-nectar-rds.org.au/fair-tool">online questionnaire</a>
 for measuring the extent to which datasets are FAIR
 has been created by the Australian Research Data Commons.
 Take the questionnaire for a dataset you have published or that you use often.</p>
@@ -1058,7 +1059,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/merely-useful/r-rse/edit/master/publish.Rmd",
+"link": "https://github.com/merely-useful/r-rse/edit/main/publish.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -1066,8 +1067,8 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
-"text": null
+"link": "https://github.com/merely-useful/r-rse/blob/main/publish.Rmd",
+"text": "View"
 },
 "download": null,
 "toc": {

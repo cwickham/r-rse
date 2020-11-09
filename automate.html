@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Automating Analyses | Merely Useful: Using R for Research Software Engineering</title>
   <meta name="description" content="Chapter 7 Automating Analyses | Merely Useful: Using R for Research Software Engineering" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Automating Analyses | Merely Useful: Using R for Research Software Engineering" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Madeleine Bonsma-Fisher, Kate Hertweck, Damien Irving, Luke Johnston, Christina Koch, Sara Mahallati, Joel Ostblom, Elizabeth Wickes, Charlotte Wickham, and Greg Wilson" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="style.html"/>
 <link rel="next" href="teams.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -1348,7 +1349,7 @@ all : results/collated.csv
 
 ## results/collated.csv : collate all results.
 results/collated.csv : $(RESULTS) $(COLLATE)
-	$(RUN_COLLATE) $(RESULTS) &gt; $@
+    $(RUN_COLLATE) $(RESULTS) &gt; $@
 </code></pre>
 <p>The first two lines tell Make about the collation program,
 while the change to <code>all</code> tells it what the final target of our pipeline is.
@@ -1429,7 +1430,7 @@ Figure 7.3: Automation Concept Map
 <h3><span class="header-section-number">7.12.6</span> The perils of shell wildcards</h3>
 <p>What is wrong with writing the rule for <code>results/collated.csv</code> like this:</p>
 <pre class="make"><code>results/collated.csv : results/*.csv
-	$(RUN_COLLATE) $^ &gt; $@</code></pre>
+    $(RUN_COLLATE) $^ &gt; $@</code></pre>
 <p>Hint: the fact that the result no longer depends on the program used to create it isn’t the only problem.</p>
 
 </div>
@@ -1463,7 +1464,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/merely-useful/r-rse/edit/master/automate.Rmd",
+"link": "https://github.com/merely-useful/r-rse/edit/main/automate.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -1471,8 +1472,8 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
-"text": null
+"link": "https://github.com/merely-useful/r-rse/blob/main/automate.Rmd",
+"text": "View"
 },
 "download": null,
 "toc": {

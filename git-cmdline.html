@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Git at the Command Line | Merely Useful: Using R for Research Software Engineering</title>
   <meta name="description" content="Chapter 4 Git at the Command Line | Merely Useful: Using R for Research Software Engineering" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Git at the Command Line | Merely Useful: Using R for Research Software Engineering" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Madeleine Bonsma-Fisher, Kate Hertweck, Damien Irving, Luke Johnston, Christina Koch, Sara Mahallati, Joel Ostblom, Elizabeth Wickes, Charlotte Wickham, and Greg Wilson" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="bash-advanced.html"/>
 <link rel="next" href="git-advanced.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -675,7 +676,7 @@ a place where Git can store versions of our files:</p>
 <p>But if we add the <code>-a</code> flag to show everything,
 we can see that Git has created a hidden directory within <code>eniac</code> called <code>.git</code>:</p>
 <pre class="shell"><code>$ ls -a</code></pre>
-<pre class="text"><code>.	..	.git</code></pre>
+<pre class="text"><code>.   ..  .git</code></pre>
 <p>Git stores information about the project in this special subdirectory.
 If we ever delete it,
 we will lose that history.</p>
@@ -715,7 +716,7 @@ No commits yet
 Untracked files:
   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)
 
-	names.txt
+    names.txt
 
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)</code></pre>
 <p>“Untracked files” means there is a file in the directory whose history Git isn’t tracking.
@@ -730,7 +731,7 @@ No commits yet
 Changes to be committed:
   (use &quot;git rm --cached &lt;file&gt;...&quot; to unstage)
 
-	new file:   names.txt</code></pre>
+    new file:   names.txt</code></pre>
 <p>Git now knows that it’s supposed to keep track of <code>names.txt</code>,
 but it hasn’t actually recorded any changes yet.
 To do taht,
@@ -790,7 +791,7 @@ Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
 
-	modified:   names.txt
+    modified:   names.txt
 
 no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</code></pre>
 <p>The last line is the key phrase:
@@ -838,7 +839,7 @@ we can commit it just as we did before:</p>
 <pre class="shell"><code>$ git commit -m &quot;Correcting typos in names&quot;</code></pre>
 <pre class="text"><code>On branch master
 Changes not staged for commit:
-	modified:   names.txt
+    modified:   names.txt
 
 no changes added to commit</code></pre>
 <p>Whoops:
@@ -850,7 +851,7 @@ $ git status</code></pre>
 Changes to be committed:
   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
 
-	modified:   names.txt</code></pre>
+    modified:   names.txt</code></pre>
 <pre class="shell"><code>$ git commit -m &quot;Correcting typos in names&quot;</code></pre>
 <pre class="text"><code>[master 61d3964] Correcting typos in names
  1 file changed, 2 insertions(+), 2 deletions(-)</code></pre>
@@ -918,8 +919,8 @@ so we will stick with it.
 We can check that the command has worked by running <code>git remote -v</code>
 (where the <code>-v</code> option is short for <strong>v</strong>erbose):</p>
 <pre class="shell"><code>$ git remote -v</code></pre>
-<pre class="text"><code>origin	https://github.com/frances/eniac.git (fetch)
-origin	https://github.com/frances/eniac.git (push)</code></pre>
+<pre class="text"><code>origin  https://github.com/frances/eniac.git (fetch)
+origin  https://github.com/frances/eniac.git (push)</code></pre>
 <p>Git displays two lines because it’s actually possible to set up a remote
 to download from one URL but upload to another.
 Sensible people don’t do this,
@@ -1122,7 +1123,7 @@ it replaces the content of the file with the old content:</p>
 Changes to be committed:
   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
 
-	modified:   names.txt</code></pre>
+    modified:   names.txt</code></pre>
 <p>Notice that the changes have already been added to the staging area for new commits.
 We can bring the file back in sync with the most recent commit using <code>git checkout</code>:</p>
 <pre class="shell"><code>$ git checkout HEAD names.txt
@@ -1362,7 +1363,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/merely-useful/r-rse/edit/master/git-cmdline.Rmd",
+"link": "https://github.com/merely-useful/r-rse/edit/main/git-cmdline.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -1370,8 +1371,8 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
-"text": null
+"link": "https://github.com/merely-useful/r-rse/blob/main/git-cmdline.Rmd",
+"text": "View"
 },
 "download": null,
 "toc": {

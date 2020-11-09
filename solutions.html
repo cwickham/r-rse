@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>F Solutions | Merely Useful: Using R for Research Software Engineering</title>
   <meta name="description" content="F Solutions | Merely Useful: Using R for Research Software Engineering" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="F Solutions | Merely Useful: Using R for Research Software Engineering" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Madeleine Bonsma-Fisher, Kate Hertweck, Damien Irving, Luke Johnston, Christina Koch, Sara Mahallati, Joel Ostblom, Elizabeth Wickes, Charlotte Wickham, and Greg Wilson" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="keypoints.html"/>
 <link rel="next" href="yaml.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -865,7 +866,7 @@ and then lists them using <code>ls</code>.
 The expanded loop would look like this:</p>
 <pre class="shell"><code>$ for datafile in cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 &gt; do
-&gt;	ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
+&gt;   ls cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 &gt; done</code></pre>
 <pre class="text"><code>cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
 cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb
@@ -913,9 +914,9 @@ Given the output from the <code>cat</code> command has been redirected, nothing 
 # Loop over all files
 for file in $@
 do
-	echo &quot;Unique species in $file:&quot;
-	# Extract species names
-	cut -d , -f 2 $file | sort | uniq
+    echo &quot;Unique species in $file:&quot;
+    # Extract species names
+    cut -d , -f 2 $file | sort | uniq
 done</code></pre>
 </div>
 <div id="exercise-refbash-basics-ex-history-order" class="section level3" number="20.1.32">
@@ -977,14 +978,14 @@ The other options will also match “of” when part of another word.</p>
 <h3><span class="header-section-number">F.2.6</span> Exercise <a href="bash-advanced.html#bash-advanced-ex-little-women">3.8.6</a></h3>
 <pre class="text"><code>for sis in Jo Meg Beth Amy
 do
-	echo $sis:
-&gt;	grep -ow $sis LittleWomen.txt | wc -l
+    echo $sis:
+&gt;   grep -ow $sis LittleWomen.txt | wc -l
 done</code></pre>
 <p>Alternative, slightly inferior solution:</p>
 <pre class="text"><code>for sis in Jo Meg Beth Amy
 do
-	echo $sis:
-&gt;	grep -ocw $sis LittleWomen.txt
+    echo $sis:
+&gt;   grep -ocw $sis LittleWomen.txt
 done</code></pre>
 <p>This solution is inferior because <code>grep -c</code> only reports the number of lines matched.
 The total number of matches reported by this method will be lower if there is more
@@ -1023,49 +1024,49 @@ do not match “temp”, rather than searching the file names.</p>
 </div>
 <div id="chapter-refautomate" class="section level2" number="20.3">
 <h2><span class="header-section-number">F.3</span> Chapter <a href="automate.html#automate">7</a></h2>
-<div id="exercise-refautomate-ex-create-summary-results" class="section level3 unnumbered" number="">
+<div id="exercise-refautomate-ex-create-summary-results" class="section level3 unnumbered">
 <h3>Exercise <a href="automate.html#automate-ex-create-summary-results">7.12.1</a></h3>
 <ul>
 <li>Add a rule to Makefile to create a summary CSV file from all of the book CSV files.</li>
 <li>Be careful about writing the prerequisites so that it doesn’t depend on itself.</li>
 </ul>
 </div>
-<div id="exercise-refautomate-ex-plot-top-n" class="section level3 unnumbered" number="">
+<div id="exercise-refautomate-ex-plot-top-n" class="section level3 unnumbered">
 <h3>Exercise <a href="automate.html#automate-ex-plot-top-n">7.12.2</a></h3>
 <ul>
 <li>Make it depend on the summary.</li>
 </ul>
 </div>
-<div id="exercise-refautomate-ex-mkdir" class="section level3 unnumbered" number="">
+<div id="exercise-refautomate-ex-mkdir" class="section level3 unnumbered">
 <h3>Exercise <a href="automate.html#automate-ex-mkdir">7.12.3</a></h3>
 <ul>
 <li>Why is <code>mkdir -p</code> useful?</li>
 </ul>
 </div>
-<div id="exercise-refautomate-ex-report-change" class="section level3 unnumbered" number="">
+<div id="exercise-refautomate-ex-report-change" class="section level3 unnumbered">
 <h3>Exercise <a href="automate.html#automate-ex-report-change">7.12.4</a></h3>
 <ul>
 <li>Write a rule to report which result files would actually change.</li>
 <li>Hint: use <code>diff</code>.</li>
 </ul>
 </div>
-<div id="exercise-refautomate-ex-readable-help" class="section level3 unnumbered" number="">
+<div id="exercise-refautomate-ex-readable-help" class="section level3 unnumbered">
 <h3>Exercise <a href="automate.html#automate-ex-readable-help">7.12.5</a></h3>
 <ul>
 <li>Modify the command in the <code>help</code> action to remove the leading ‘##’ markers from the output.</li>
 </ul>
 </div>
-<div id="exercise-refautomate-ex-wildcard-perils" class="section level3 unnumbered" number="">
+<div id="exercise-refautomate-ex-wildcard-perils" class="section level3 unnumbered">
 <h3>Exercise <a href="automate.html#automate-ex-wildcard-perils">7.12.6</a></h3>
 <p>What is wrong with writing the rule for <code>results/collated.csv</code> like this:</p>
 <pre class="make"><code>results/collated.csv : results/*.csv
-	$(RUN_COLLATE) $^ &gt; $@</code></pre>
+    $(RUN_COLLATE) $^ &gt; $@</code></pre>
 <p>Hint: the fact that the result no longer depends on the program used to create it isn’t the only problem.</p>
 </div>
 </div>
 <div id="chapter-refgit-cmdline" class="section level2" number="20.4">
 <h2><span class="header-section-number">F.4</span> Chapter <a href="git-cmdline.html#git-cmdline">4</a></h2>
-<div id="exercise-refgit-cmdline-ex-places" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-places" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-places">4.8.1</a></h3>
 <p>Frances does not need to make the <code>univac</code> subdirectory a Git repository
 because the <code>eniac</code> repository will track everything inside it regardless of how deeply nested.</p>
@@ -1075,7 +1076,7 @@ Git will not know whether to record the changes in that repository,
 the outer one,
 or both.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-commit" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-commit" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-commit">4.8.2</a></h3>
 <ol style="list-style-type: decimal">
 <li>Would only create a commit if files have already been staged.</li>
@@ -1084,7 +1085,7 @@ or both.</p>
 <li>Would try to commit a file “my recent changes” with the message myfile.txt.</li>
 </ol>
 </div>
-<div id="exercise-refgit-cmdline-ex-multiple" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-multiple" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-multiple">4.8.3</a></h3>
 <ol style="list-style-type: decimal">
 <li>Change <code>names.txt</code> and <code>old-computers.txt</code> using an editor like Nano.</li>
@@ -1093,7 +1094,7 @@ or both.</p>
 <li>Commit both files at once with <code>git commit</code>.</li>
 </ol>
 </div>
-<div id="exercise-refgit-cmdline-ex-bio" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-bio" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-bio">4.8.4</a></h3>
 <ol style="list-style-type: decimal">
 <li>Go into your home directory with <code>cd ~</code>.</li>
@@ -1106,13 +1107,13 @@ or both.</p>
 <li>Use <code>git diff</code> to see the differences.</li>
 </ol>
 </div>
-<div id="exercise-refgit-cmdline-ex-ignore-nested" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-ignore-nested" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-ignore-nested">4.8.5</a></h3>
 <p>To ignore only the contents of <code>results/plots</code>,
 add this line to <code>.gitignore</code>:</p>
 <pre class="text"><code>results/plots/</code></pre>
 </div>
-<div id="exercise-refgit-cmdline-ex-include" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-include" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-include">4.8.6</a></h3>
 <p>Add the following two lines to <code>.gitignore</code>:</p>
 <pre class="text"><code>*.dat           # ignore all data files
@@ -1122,7 +1123,7 @@ add this line to <code>.gitignore</code>:</p>
 they will not be ignored once these rules are added to <code>.gitignore</code>.
 Only future <code>.dat</code> files will be ignored.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-github-interface" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-github-interface" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-github-interface">4.8.7</a></h3>
 <p>The left button (with the picture of a clipboard)
 copies the full identifier of the commit to the clipboard.
@@ -1140,21 +1141,21 @@ using <code>git checkout <em>id</em></code>.
 If we do this,
 we need to remember to put the repository back to the right state afterward.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-timestamp" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-timestamp" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-timestamp">4.8.8</a></h3>
 <p>GitHub displays timestamps in a human-readable relative format
 (i.e. “22 hours ago” or “three weeks ago”).
 However, if we hover over the timestamp
 we can see the exact time at which the last change to the file occurred.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-push-commit" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-push-commit" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-push-commit">4.8.9</a></h3>
 <p>Committing updates our local repository.
 Pushing sends any commits we have made locally
 that aren’t yet in the remote repository
 to the remote repository.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-boilerplate" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-boilerplate" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-boilerplate">4.8.10</a></h3>
 <p>When GitHub creates a <code>README.md</code> file while setting up a new repository,
 it actually creates the repository and then commits the <code>README.md</code> file.
@@ -1173,7 +1174,7 @@ fatal: refusing to merge unrelated histories</code></pre>
 <p>We can force git to merge the two repositories with the option <code>--allow-unrelated-histories</code>.
 Please check the contents of the local and remote repositories carefully before doing this.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-recover" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-recover" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-recover">4.8.11</a></h3>
 <p>The answer is (5)-Both 2 and 4.</p>
 <p>The <code>checkout</code> command restores files from the repository,
@@ -1192,7 +1193,7 @@ This command will restore <code>data_cruncher.sh</code> to the latest commit ver
 but will also reset any other files we have changed to that version,
 which will erase any unsaved changes you may have made to those files.</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-history" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-history" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-history">4.8.12</a></h3>
 <p>The answer is 2.</p>
 <p>The command <code>git add history.txt</code> adds the current version of <code>history.txt</code> to the staging area.
@@ -1210,22 +1211,22 @@ the most recently committed version of <code>history.txt</code>,
 so <code>cat history.txt</code> prints:</p>
 <pre class="text"><code>ENIAC was the world&#39;s first general-purpose electronic computer.</code></pre>
 </div>
-<div id="exericse-refgit-cmdline-ex-diff" class="section level3 unnumbered" number="">
+<div id="exericse-refgit-cmdline-ex-diff" class="section level3 unnumbered">
 <h3>Exericse <a href="git-cmdline.html#git-cmdline-ex-diff">4.8.13</a></h3>
 <p>FIXME: solution for exercise on git diff</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-unstage" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-unstage" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-unstage">4.8.14</a></h3>
 <p>FIXME: solution for exercise on git unstage</p>
 </div>
-<div id="exercise-refgit-cmdline-ex-blame" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-cmdline-ex-blame" class="section level3 unnumbered">
 <h3>Exercise <a href="git-cmdline.html#git-cmdline-ex-blame">4.8.15</a></h3>
 <p>FIXME: solution for exercise on git blame</p>
 </div>
 </div>
 <div id="chapter-refgit-advanced" class="section level2" number="20.5">
 <h2><span class="header-section-number">F.5</span> Chapter <a href="git-advanced.html#git-advanced">5</a></h2>
-<div id="exercise-refgit-advanced-ex-additional-pr" class="section level3 unnumbered" number="">
+<div id="exercise-refgit-advanced-ex-additional-pr" class="section level3 unnumbered">
 <h3>Exercise <a href="git-advanced.html#git-advanced-ex-additional-pr">5.8.1</a></h3>
 <pre class="shell"><code>$ git checkout master
 $ git checkout -b addItaly
@@ -1319,7 +1320,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/merely-useful/r-rse/edit/master/solutions.Rmd",
+"link": "https://github.com/merely-useful/r-rse/edit/main/solutions.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -1327,8 +1328,8 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
-"text": null
+"link": "https://github.com/merely-useful/r-rse/blob/main/solutions.Rmd",
+"text": "View"
 },
 "download": null,
 "toc": {

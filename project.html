@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 Project Structure | Merely Useful: Using R for Research Software Engineering</title>
   <meta name="description" content="Chapter 9 Project Structure | Merely Useful: Using R for Research Software Engineering" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 Project Structure | Merely Useful: Using R for Research Software Engineering" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Madeleine Bonsma-Fisher, Kate Hertweck, Damien Irving, Luke Johnston, Christina Koch, Sara Mahallati, Joel Ostblom, Elizabeth Wickes, Charlotte Wickham, and Greg Wilson" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="teams.html"/>
 <link rel="next" href="ci.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -644,8 +645,8 @@ The project includes the raw data,
 the programs used to tidy that data,
 the tidied data,
 the extra files needed to make the dataset an R package (Chapter <a href="package-r.html#package-r">11</a>),
-and a few text files describing the data’s authors, license, and [provenance][provenance].</p></li>
-<li><p>A set of annual reports written for an [NGO][ngo].
+and a few text files describing the data’s authors, license, and <a href="glossary.html#provenance">provenance</a>.</p></li>
+<li><p>A set of annual reports written for an <a href="glossary.html#ngo">NGO</a>.
 The project includes several Jupyter notebooks,
 some supporting Python libraries used by those notebooks,
 copies of the HTML and PDF versions of the reports,
@@ -693,7 +694,7 @@ GitHub displays the content of this file on the project’s home page.</p></li>
 <li><p><code>CODE_OF_CONDUCT.md</code> is its code of conduct (also discussed in Chapter <a href="teams.html#teams-coc">8.2</a>).</p></li>
 <li><p><code>CITATION</code> explains how the work should be cited.
 This file should contains a plain text citation that can be copied and pasted into email,
-and may also include entries formatted for various bibliographic systems like [BibTeX][bibtex].</p></li>
+and may also include entries formatted for various bibliographic systems like <a href="http://www.bibtex.org/">BibTeX</a>.</p></li>
 </ul>
 <p>Other information may be included as sections in these files or put into files of their own:</p>
 <ul>
@@ -718,7 +719,7 @@ and the others (<code>README.md</code> and <code>CITATION</code>) can be quite s
 Having these files helps new contributors orient themselves,
 and also signals that the project is well run.</p>
 <p>What’s more,
-much of this content is [boilerplate][boilerplate],
+much of this content is <a href="glossary.html#boilerplate">boilerplate</a>,
 i.e.,
 the files are copied from one project to another without any changes.
 Once someone knows that a project is using the MIT License (Section <a href="#teams-software-license"><strong>??</strong></a>)
@@ -755,7 +756,7 @@ since it contains several files.</p></li>
 <p>While the directories in the top level of each project are organized by purpose,
 the directories within <code>./data/</code> …. are organized chronologically
 to make it easy to see when data was gathered and when results were generated.
-These directories all have names in [ISO date format][iso-date-format] like <code>YYYY-MM-DD</code>
+These directories all have names in <a href="glossary.html#iso-date-format">ISO date format</a> like <code>YYYY-MM-DD</code>
 to make it easy to sort them chronologically.
 This naming is particularly helpful when data and results are used in several reports.</p>
 <p>At all levels,
@@ -767,7 +768,7 @@ giving filenames like <code>gorilla_kidney_cm200.csv</code>.
 This allows <code>gorilla_*_cm200.csv</code> to match all gorilla organs
 or <code>*_kidney_*.csv</code> to match all kidney data.
 It does produce long filenames,
-but [tab completion][tab-completion] means that we only have to type the full name once.
+but <a href="glossary.html#tab-completion">tab completion</a> means that we only have to type the full name once.
 Long filenames are just as easy to match in programs:
 Python’s <code>glob</code> and R’s <code>Sys.glob</code> will both take a pattern and return a list of matching filenames.</p>
 <p><span class="citation">Marwick et al. (<a href="references.html#ref-Marw2018" role="doc-biblioref">2018</a>)</span> describes a simple layout:</p>
@@ -787,14 +788,14 @@ the information needed to make the project an R package (Chapter <a href="packa
 <div id="project-scripts" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> How should I manage a mix of compiled programs and scripts?</h2>
 <p>Programming languages come in two flavors: compiled and interpreted.
-In order to run a program in a [compiled language][compiled-language] such as C++ or Java,
-we give the source files to a [compiler][compiler]
+In order to run a program in a <a href="glossary.html#compiled-language">compiled language</a> such as C++ or Java,
+we give the source files to a <a href="glossary.html#compiler">compiler</a>
 that translates them into instructions a computer can actually execute
 and saves those instructions in files (Figure <a href="project.html#fig:project-languages">9.2</a>a).
 Those files full of instructions can then be re-used as often as we want.
-If we are using an [interpreted language][interpreted-language] like R,
+If we are using an <a href="glossary.html#interpreted-language">interpreted language</a> like R,
 on the other hand,
-we give our source files to an [interpreter][interpeter].
+we give our source files to an <a href="glossary.html#interpeter">interpreter</a>.
 It also translates the code into instructions,
 but puts those instructions in memory and executes them immediately (Figure <a href="project.html#fig:project-languages">9.2</a>b).</p>
 <div class="figure"><span id="fig:project-languages"></span>
@@ -807,10 +808,10 @@ Figure 9.2: Language Types
 but historically it led to very different styles of programming.
 Compiled languages usually ran faster than interpreted languages,
 but compilation took time,
-so interpreted languages were better for [exploratory programming][exploratory-programming].
+so interpreted languages were better for <a href="glossary.html#exploratory-programming">exploratory programming</a>.
 The differences are much smaller these days than they were twenty years ago,
 but we do still tend to use compiled languages for anything that has to interact directly with hardware
-and then [wrap][wrap-code] those libraries for use in interpreted languages.</p>
+and then <a href="glossary.html#wrap-code">wrap</a> those libraries for use in interpreted languages.</p>
 <p>All of this is preamble to deciding where to put things if a project contains compiled programs.
 Most software engineers put source code in version control
 and recompile it as needed to produce executables:</p>
@@ -850,21 +851,21 @@ Putting these files in the same directory as handwritten files
 has the same problems as putting a compiler’s output in the same directory as handwritten scripts.
 In fact,
 it’s often worse,
-since [documentation generators][documentation-generator] often create many subdirectories and support files.</p></li>
+since <a href="glossary.html#documentation-generator">documentation generators</a> often create many subdirectories and support files.</p></li>
 <li><p>We often create several reports for a single project,
 which complicates file management even further.</p></li>
 </ol>
 <p>There are three kinds of people in any domain:
-[novices][novice],
-[competent practitioners][competent-practitioner],
-and [experts][expert] <span class="citation">Wilson (<a href="references.html#ref-Wils2018" role="doc-biblioref">2019</a><a href="references.html#ref-Wils2018" role="doc-biblioref">a</a>)</span>.
-A novice doesn’t yet have a [mental model][mental-model] of the domain;
+<a href="glossary.html#novice">novices</a>,
+<a href="glossary.html#competent-practitioner">competent practitioners</a>,
+and <a href="glossary.html#expert">experts</a> <span class="citation">Wilson (<a href="references.html#ref-Wils2018" role="doc-biblioref">2019</a><a href="references.html#ref-Wils2018" role="doc-biblioref">a</a>)</span>.
+A novice doesn’t yet have a <a href="glossary.html#mental-model">mental model</a> of the domain;
 they don’t know what the key terms are,
 how they relate,
 what the causes of their problems are,
 or how to tell whether a solution to their problem is appropriate or not.</p>
 <p>Competent practitioners know enough to accomplish routine tasks with routine effort:
-they may need to check [Stack Overflow][stack-overflow] every few minutes,
+they may need to check <a href="https://stackoverflow.com/">Stack Overflow</a> every few minutes,
 but they know what to search for and what “done” looks like.
 Finally,
 experts have such a deep and broad understanding of the domain
@@ -884,7 +885,7 @@ and why they were designed that way.</p>
 <p>The first thing to decide when writing documentation
 is therefore to decide which of these needs we are trying to meet.
 Tutorials like this one should be long-form prose that contain code samples and diagrams.
-They should use [authentic tasks][authentic-task] to motivate ideas,
+They should use <a href="glossary.html#authentic-task">authentic tasks</a> to motivate ideas,
 i.e.,
 show people things they actually want to do rather than printing the numbers from 1 to 10,
 and should include regular check-ins
@@ -898,7 +899,7 @@ They can make use of an alphabetical list of the functions in a library,
 but are much happier if they can search by keyword to find what they need;
 one of the signs that someone is no longer a novice is that
 they’re able to compose useful queries and tell if the results are on the right track or not.</p>
-<p>That observation brings us to the notion of a [false beginner][false-beginner],
+<p>That observation brings us to the notion of a <a href="glossary.html#false-beginner">false beginner</a>,
 which is someone who appears not to know anything,
 but who has enough prior experience in other domains
 to be able to piece things together much more quickly than a genuine novice.
@@ -906,7 +907,7 @@ Someone who is proficient with MATLAB, for example,
 will speed through a tutorial on Python’s numerical libraries
 much more quickly than someone who has never programmed before.</p>
 <p>In an ideal world,
-we would satisfy these needs with a [chorus of explanations][caulfield-chorus],
+we would satisfy these needs with a <a href="https://hapgood.us/2016/05/13/choral-explanations/">chorus of explanations</a>,
 some long and detailed,
 others short and to the point.
 In our world, though,
@@ -918,7 +919,7 @@ how to create reference guides and FAQs.</p>
 <div id="project-infer" class="section level2" number="9.6">
 <h2><span class="header-section-number">9.6</span> What should I document?</h2>
 <p>The answer to the question in this section’s title depends on what stage of development we are in.
-If we are doing [exploratory programming][exploratory-programming],
+If we are doing <a href="glossary.html#exploratory-programming">exploratory programming</a>,
 a short docstring to remind ourselves of each function’s purpose is good enough.
 (In fact, it’s probably better than what most people do.)
 That one- or two-liner should begin with an active verb and describe either
@@ -957,7 +958,7 @@ so that failure reports are easy to scan.</p>
 </div>
 <div id="project-faq" class="section level2" number="9.7">
 <h2><span class="header-section-number">9.7</span> How can I create a useful FAQ?</h2>
-<p>An [FAQ][faq] is a list of frequently-asked questions and corresponding answers.
+<p>An <a href="glossary.html#faq">FAQ</a> is a list of frequently-asked questions and corresponding answers.
 A good FAQ uses the terms and concepts that people bring to the software
 rather than the vocabulary of its authors;
 putting it another way,
@@ -968,7 +969,7 @@ and unless the community is large and active,
 a lot of that effort may turn out to be wasted,
 because it’s hard for the authors or maintainers of a piece of software
 to anticipate what newcomers will be mystified by.
-A better approach is to leverage sites like [Stack Overflow][stack-overflow],
+A better approach is to leverage sites like <a href="https://stackoverflow.com/">Stack Overflow</a>,
 which is where most programmers are going to look for answers anyway:</p>
 <ol style="list-style-type: decimal">
 <li>Post every question that someone actually asks us,
@@ -980,14 +981,14 @@ making sure to mention which version of the software we’re talking about
 (so that people can easily spot and discard stale answers in the future).</li>
 </ol>
 <p>With a bit of work,
-the [Stack Exchange Data Explorer][stack-exchange-data-explorer]
+the <a href="https://data.stackexchange.com/">Stack Exchange Data Explorer</a>
 can be used to download questions and answers about our software
 if we want to put them all in an offline guide.
-we can also use [Stack Printer][stack-printer] for this;
+we can also use <a href="http://www.stackprinter.com/">Stack Printer</a> for this;
 for example, the URL
 <a href="http://www.stackprinter.com/topvoted?service=stackoverflow&amp;tagged=rstudio" class="uri">http://www.stackprinter.com/topvoted?service=stackoverflow&amp;tagged=rstudio</a>
 will bring up a paged view of top-voted questions about RStudio.</p>
-<p>[Stack Overflow][stack-overflow]’s guide to [asking a good question][stack-overflow-good-question]
+<p><a href="https://stackoverflow.com/">Stack Overflow</a>’s guide to <a href="https://stackoverflow.com/help/how-to-ask">asking a good question</a>
 has been refined over many years,
 and is a good guide for any project:</p>
 <p>Write the most specific title we can.</p>
@@ -997,7 +998,7 @@ and is a good guide for any project:</p>
 will help people determine if their question is a close match to ours or not.
 </dd>
 <dt>Provide a minimal reprex.</dt>
-<dd>Section <a href="teams.html#teams-bugs">8.5</a> explains the value of a [reproducible example][reprex] (reprex),
+<dd>Section <a href="teams.html#teams-bugs">8.5</a> explains the value of a <a href="glossary.html#reprex">reproducible example</a> (reprex),
 and why reprexes should be as short as possible.
 TODO: Discuss reprex package.
 Readers will have a much easier time figuring out if this question and its answers are for them
@@ -1021,7 +1022,7 @@ This may feel like baby steps to the person doing the writing,
 but is often as much as a person searching and reading can handle.
 It also helps writers realize just how much implicit knowledge they are assuming.
 </dd>
-<dt>Allow for a [chorus of explanations][caulfield-chorus].</dt>
+<dt>Allow for a <a href="https://hapgood.us/2016/05/13/choral-explanations/">chorus of explanations</a>.</dt>
 <dd>As discussed earlier,
 users are all different from one another,
 and are therefore best served by a chorus of explanations.
@@ -1051,7 +1052,7 @@ the content description and the process information may be contained in the same
 a file that has recieved extensive manual editing and curation
 should have much more detailed description of what was done.
 Good tools,
-like [OpenRefine][openrefine],
+like <a href="http://openrefine.org/">OpenRefine</a>,
 allow us to export a list of all the changes we have made to a file.
 This is extremely detailed process information,
 much like looking at a lenthy series of diffs in version control history,
@@ -1143,7 +1144,7 @@ We should use proper markup so screen readers can interact with the structure of
 provide transcripts for all screencasts or other videos,
 add alt-text descriptions to images,
 and ensure that all text is actually rendered so that it can be selected and interacted with.
-The UK Home Office has published a [set of posters][ukho-accessibility] that summarize accessibility guidelines
+The UK Home Office has published a <a href="https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf">set of posters</a> that summarize accessibility guidelines
 and also serve as a great checklist for ensuring access.</p></li>
 <li><p>Finally,
 “for those who need it” means taking your audience into account
@@ -1195,11 +1196,11 @@ every datum should have an “address” or location description that can unique
 For example,
 a datum may be “in file <code>ACX-02.csv</code>, under column <code>reading_type</code>, in row 450”.</p>
 <p>To achieve this,
-the dataset itself should have a [DOI][doi] (Section <a href="publish.html#publish-identifiers">13.1</a>),
+the dataset itself should have a <a href="glossary.html#doi">DOI</a> (Section <a href="publish.html#publish-identifiers">13.1</a>),
 and within the dataset,
 every file should have a meaningful name (Section <a href="project.html#project-data-vs-code">9.8</a>).
 Going further,
-every record should have a unique [key][key] within the dataset (Section <a href="publish.html#publish-data">13.3</a>):
+every record should have a unique <a href="glossary.html#key">key</a> within the dataset (Section <a href="publish.html#publish-data">13.3</a>):
 row numbers can change as datasets are sorted,
 but unique keys that are part of records should always stay in those records.</p></li>
 <li><p><strong>Have a backup plan.</strong>
@@ -1243,7 +1244,7 @@ creating a checklist should be the second.</p>
 <p>The data used within an active project is often rapidly changed, added, or removed.
 Maintaining and collecting relevant documentation within this phase of constant change can be difficult.
 One way to tackle this is to keep informal documentation.
-Creating a [parking lot][parking-lot] file for each dataset
+Creating a <a href="glossary.html#parking-lot">parking lot</a> file for each dataset
 provides a place to jot down notes when things happen.
 These documents should be the home for quick notes,
 important links,
@@ -1342,7 +1343,7 @@ so that instead of reading <code>gorilla_genome.bam</code>,
 the program reads <code>gorilla_genome.yml</code> and then uses the <code>url</code> key in that file to find the data it actually wants.
 Whatever you do,
 you should always include a <code>README.md</code> file in <code>./data/</code>
-that documents the [provenance][provenance] and organization of the data
+that documents the <a href="glossary.html#provenance">provenance</a> and organization of the data
 (Section <a href="publish.html#publish-data">13.3</a>).</p>
 </div>
 <div id="project-summary" class="section level2" number="9.13">
@@ -1516,8 +1517,8 @@ with associated institutions, contact information, and other identifiers</li>
 </div>
 <div id="project-ex-permanent-links" class="section level3" number="9.14.4">
 <h3><span class="header-section-number">9.14.4</span> Making permanent links</h3>
-<p>The link to the UK Home Office’s [accessibility guideline posters][ukho-accessibility] might change in future.
-Use the [Wayback Machine][wayback-machine] to find a link that is more likely to be usable in the long run.</p>
+<p>The link to the UK Home Office’s <a href="https://ukhomeoffice.github.io/accessibility-posters/posters/accessibility-posters.pdf">accessibility guideline posters</a> might change in future.
+Use the <a href="http://web.archive.org/">Wayback Machine</a> to find a link that is more likely to be usable in the long run.</p>
 </div>
 </div>
 <div id="project-keypoints" class="section level2" number="9.15">
@@ -1562,7 +1563,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/merely-useful/r-rse/edit/master/project.Rmd",
+"link": "https://github.com/merely-useful/r-rse/edit/main/project.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -1570,8 +1571,8 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
-"text": null
+"link": "https://github.com/merely-useful/r-rse/blob/main/project.Rmd",
+"text": "View"
 },
 "download": null,
 "toc": {

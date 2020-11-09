@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 10 Continuous Integration | Merely Useful: Using R for Research Software Engineering</title>
   <meta name="description" content="Chapter 10 Continuous Integration | Merely Useful: Using R for Research Software Engineering" />
-  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 10 Continuous Integration | Merely Useful: Using R for Research Software Engineering" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Madeleine Bonsma-Fisher, Kate Hertweck, Damien Irving, Luke Johnston, Christina Koch, Sara Mahallati, Joel Ostblom, Elizabeth Wickes, Charlotte Wickham, and Greg Wilson" />
 
 
-<meta name="date" content="2020-07-21" />
+<meta name="date" content="2020-11-09" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="project.html"/>
 <link rel="next" href="package-r.html"/>
-<script src="libs/header-attrs-2.3/header-attrs.js"></script>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -608,7 +609,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
             <section class="normal" id="section-">
 <div id="ci" class="section level1" number="10">
 <h1><span class="header-section-number">Chapter 10</span> Continuous Integration</h1>
-<p>[Continuous integration][continuous-integration] (CI) a simple idea:
+<p><a href="glossary.html#continuous-integration">Continuous integration</a> (CI) a simple idea:
 merge and test changes to a project automatically and frequently
 so that developers get feedback about problems
 while those changes are still fresh in their minds.
@@ -623,8 +624,8 @@ or on several different operating systems,
 so that (for example) if a programmer makes a change on Windows
 that would break something for Mac users or vice versa,
 they find out before their friends’ lives are disrupted.</p>
-<p>This chapter introduces a CI tool called [Travis CI][travis-ci]
-that integrates well with [GitHub][github].
+<p>This chapter introduces a CI tool called <a href="https://travis-ci.org/">Travis CI</a>
+that integrates well with <a href="http://github.com">GitHub</a>.
 If Travis CI has been set up,
 then every time a change is committed to a GitHub repository,
 Travis CI creates a fresh environment,
@@ -645,7 +646,7 @@ we have Travis CI set up to re-create the PDF and HTML versions of this book
 every time a pull request is merged.</p>
 <blockquote>
 <p><strong>Virtual Machines</strong></p>
-<p>A [virtual machine][virtual-machine] (VM) is a program that pretends to be a computer.
+<p>A <a href="glossary.html#virtual-machine">virtual machine</a> (VM) is a program that pretends to be a computer.
 This may seem a bit redundant,
 but VMs are quick to create and start up,
 and changes made inside the virtual machine are contained within that VM
@@ -659,7 +660,7 @@ nothing left over from previous attempts to compile, run, or publish will affect
 <h2><span class="header-section-number">10.1</span> How do I set up continuous integration?</h2>
 <p>We have to do five things to set up continuous integration:</p>
 <ol style="list-style-type: decimal">
-<li>Create an account with [Travis CI][travis-ci].</li>
+<li>Create an account with <a href="https://travis-ci.org/">Travis CI</a>.</li>
 <li>Link our Travis CI account to our GitHub account.</li>
 <li>Tell Travis CI to watch the repository that contains our project.</li>
 <li>Create a <code>.travis.yml</code> file in your repository
@@ -679,7 +680,7 @@ but linking our Travis CI account to our GitHub account may be new.
 When we do this,
 we are not only telling Travis CI who we are on GitHub:
 we are also telling GitHub that it’s OK for Travis CI to get information about us
-via GitHub’s [API][api].
+via GitHub’s <a href="glossary.html#api">API</a>.
 This permission is necessary—without it,
 we would have to enter our password every time Travis CI wanted to run,
 which would hardly count as “automated”—but
@@ -749,7 +750,7 @@ depending on the most recently recorded build status for that project.</p>
 <div id="ci-setting-up-with-r" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> How can I set up Travis CI for an R project?</h2>
 <p>The simplest way to set up and use Travis CI with R is to call:</p>
-<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="ci.html#cb529-1"></a>usethis<span class="op">::</span><span class="kw">use_travis</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb529"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb529-1"><a href="ci.html#cb529-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_travis</span>()</span></code></pre></div>
 <p>This command:</p>
 <ul>
 <li>Creates a <code>.travis.yml</code> configuration file with typical settings for an R package.</li>
@@ -774,9 +775,9 @@ the tests will run.</p>
 <p>With this in place,
 the Travis CI log located right below the build overview
 will contain all of the information that our testing command produces when tests fail.</p>
-<p>We can also have Travis CI report the [code coverage][code-coverage] of our tests (Section <a href="correct.html#correct-coverage">12.7</a>).
+<p>We can also have Travis CI report the <a href="glossary.html#code-coverage">code coverage</a> of our tests (Section <a href="correct.html#correct-coverage">12.7</a>).
 This command will set everything up for us:</p>
-<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="ci.html#cb530-1"></a>usethis<span class="op">::</span><span class="kw">use_coverage</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb530"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb530-1"><a href="ci.html#cb530-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_coverage</span>()</span></code></pre></div>
 <p>FIXME: explain what this does to the YAML file.</p>
 </div>
 <div id="ci-deploying" class="section level2" number="10.5">
@@ -786,20 +787,20 @@ but it can be used to automate almost anything.
 For example,
 if we want to create a website for an R package,
 we can run:</p>
-<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="ci.html#cb531-1"></a>usethis<span class="op">::</span><span class="kw">use_pkgdown</span>()</span>
-<span id="cb531-2"><a href="ci.html#cb531-2"></a>usethis<span class="op">::</span><span class="kw">use_pkgdown_travis</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb531"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb531-1"><a href="ci.html#cb531-1" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_pkgdown</span>()</span>
+<span id="cb531-2"><a href="ci.html#cb531-2" aria-hidden="true"></a>usethis<span class="op">::</span><span class="kw">use_pkgdown_travis</span>()</span></code></pre></div>
 <p>to add lines like this to our <code>.travis.yml</code> file:</p>
-<div class="sourceCode" id="cb532"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb532-1"><a href="ci.html#cb532-1"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> R</span></span>
-<span id="cb532-2"><a href="ci.html#cb532-2"></a><span class="fu">sudo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb532-3"><a href="ci.html#cb532-3"></a><span class="fu">cache</span><span class="kw">:</span><span class="at"> packages</span></span>
-<span id="cb532-4"><a href="ci.html#cb532-4"></a></span>
-<span id="cb532-5"><a href="ci.html#cb532-5"></a><span class="fu">before_cache</span><span class="kw">:</span><span class="at"> Rscript -e &#39;remotes::install_cran(&quot;pkgdown&quot;)&#39;</span></span>
-<span id="cb532-6"><a href="ci.html#cb532-6"></a><span class="fu">deploy</span><span class="kw">:</span></span>
-<span id="cb532-7"><a href="ci.html#cb532-7"></a><span class="at">  </span><span class="fu">provider</span><span class="kw">:</span><span class="at"> script</span></span>
-<span id="cb532-8"><a href="ci.html#cb532-8"></a><span class="at">  </span><span class="fu">script</span><span class="kw">:</span><span class="at"> Rscript -e &#39;pkgdown::deploy_site_github()&#39;</span></span>
-<span id="cb532-9"><a href="ci.html#cb532-9"></a><span class="at">  </span><span class="fu">skip_cleanup</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
+<div class="sourceCode" id="cb532"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb532-1"><a href="ci.html#cb532-1" aria-hidden="true"></a><span class="fu">language</span><span class="kw">:</span><span class="at"> R</span></span>
+<span id="cb532-2"><a href="ci.html#cb532-2" aria-hidden="true"></a><span class="fu">sudo</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb532-3"><a href="ci.html#cb532-3" aria-hidden="true"></a><span class="fu">cache</span><span class="kw">:</span><span class="at"> packages</span></span>
+<span id="cb532-4"><a href="ci.html#cb532-4" aria-hidden="true"></a></span>
+<span id="cb532-5"><a href="ci.html#cb532-5" aria-hidden="true"></a><span class="fu">before_cache</span><span class="kw">:</span><span class="at"> Rscript -e &#39;remotes::install_cran(&quot;pkgdown&quot;)&#39;</span></span>
+<span id="cb532-6"><a href="ci.html#cb532-6" aria-hidden="true"></a><span class="fu">deploy</span><span class="kw">:</span></span>
+<span id="cb532-7"><a href="ci.html#cb532-7" aria-hidden="true"></a><span class="at">  </span><span class="fu">provider</span><span class="kw">:</span><span class="at"> script</span></span>
+<span id="cb532-8"><a href="ci.html#cb532-8" aria-hidden="true"></a><span class="at">  </span><span class="fu">script</span><span class="kw">:</span><span class="at"> Rscript -e &#39;pkgdown::deploy_site_github()&#39;</span></span>
+<span id="cb532-9"><a href="ci.html#cb532-9" aria-hidden="true"></a><span class="at">  </span><span class="fu">skip_cleanup</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div>
 <p>The <code>deploy</code> section tells Travis CI to put the generated website files online
-using [GitHub Pages][github-pages].</p>
+using <a href="https://pages.github.com/">GitHub Pages</a>.</p>
 <p>FIXME: this section needs more detail.
 As it is, readers will know something is possible
 but not how it works or how to debug it when things go wrong.
@@ -864,7 +865,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/merely-useful/r-rse/edit/master/ci.Rmd",
+"link": "https://github.com/merely-useful/r-rse/edit/main/ci.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -872,8 +873,8 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": null,
-"text": null
+"link": "https://github.com/merely-useful/r-rse/blob/main/ci.Rmd",
+"text": "View"
 },
 "download": null,
 "toc": {
