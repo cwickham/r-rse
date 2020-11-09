@@ -46,13 +46,9 @@ fig:package-distribution
 fig:package-r-concept
 fig:correct-how-coverage-works
 fig:correct-concept
-rse-intro
-rse-intro-personas
-summary
-prerequisites
-rse-intro-big-picture
-why-isnt-all-of-this-already-normal
-syllabus
+welcome-to-the-course-webpage
+licensing
+target-audience-of-book
 rse-intro-ack
 bash-basics
 bash-basics-explore
